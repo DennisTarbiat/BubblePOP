@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../client/images/site_background.jpg");
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#canvas1 {
+  width: 800px;
+  height: 500px;
+  border: 4px solid black;
+  background: linear-gradient(
+    to bottom,
+    rgb(34, 93, 196),
+    rgb(15, 65, 150),
+    black
+  );
+}
+
+.imageContainer {
+  width: 800px;
+  height: 500px;
+  border: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.startImage {
+  margin-top: 8vh;
+  margin-right: 3vw;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.1vw;
+}
+
+.button {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: rgba(162, 162, 240, 0.692);
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: rgba(189, 98, 37, 0.801);
+  color: white;
+  width: 220px;
+  font-size: large;
+  border: solid black 2px;
+  font-family: Helvetica;
+}
+
+/* Scoreboard */
+.score {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 128, 0.103);
+}
+
+/* Scoreboard Content/Box */
+.score-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888888;
+  width: 20%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bubble animation */
+@keyframes bubbles {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+/* Bubbles */
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: rgba(47, 59, 168, 0.315);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: bubbles 5s infinite;
+  pointer-events: none;
+}
+
+.bubble:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  left: 20%;
+  animation-duration: 6s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(3) {
+  width: 15px;
+  height: 15px;
+  left: 30%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(4) {
+  width: 25px;
+  height: 25px;
+  left: 40%;
+  animation-duration: 5s;
+  animation-delay: 3s;
+}
+.bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 50%;
+  animation-duration: 7s;
+  animation-delay: 5s;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* High Score List */
+#highscoreList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#highscoreList li {
+  background: rgba(255, 255, 255, 0.9);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+/* How to play */
+.howtoplay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 128, 0.116);
+}
+
+/* How to play Content/Box */
+.howtoplay-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* The Close Button */
+.close-howToPlay,
+.close-highScores {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-howToPlay:hover,
+.close-highScores:hover,
+.close-howToPlay:focus,
+.close-highScores:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* High Score List */
+#highscoreList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#highscoreList li {
+  background: rgba(255, 255, 255, 0.9);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* The Close Button Submit*/
+.close-submitScore {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-submitScore:hover,
+.close-submitScore:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form Styles */
+#submitScoreForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#submitScoreForm label,
+#submitScoreForm input,
+#submitScoreForm button {
+  margin: 10px 0;
+}
+
+/* Basic styling for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+}
+.modal-content {
+  background-color: #fff;
+  margin: 30vh auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #45a049;
+}
+input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
