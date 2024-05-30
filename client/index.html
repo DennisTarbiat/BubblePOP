@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bubble POP</title>
+  </head>
+  <body>
+    <canvas id="canvas1"></canvas>
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="button" id="button1">Play Again</button>
+      <button class="button" id="button2">High Score</button>
+      <button
+        class="button"
+        id="button5"
+        onclick="location.href='startPage.html'"
+      >
+        Home
+      </button>
+      <button class="button" id="button6">Mute/Unmute Music</button>
+    </div>
+    <!-- Scoreboard -->
+    <div id="scoreboard" class="score">
+      <div class="score-content">
+        <span class="close">&times;</span>
+        <h2>Top 10 High Scores</h2>
+        <ul id="highscoreList"></ul>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </div>
+    <!-- Submit -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>
+          Score: <span id="finalScore"></span
+          ><span id="closeSubmit" class="close">x</span>
+        </p>
+        <input type="text" id="modalInput" placeholder="Enter your name..." />
+        <button id="submit">Submit</button>
+      </div>
+    </div>
+    <script src="./scripts/script.js" type="module"></script>
+  </body>
+</html>
