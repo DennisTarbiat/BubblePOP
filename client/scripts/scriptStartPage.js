@@ -1,4 +1,4 @@
-//HTML Elements
+///HTML Elements
 const highscoreButton = document.getElementById("button2");
 const scoreboard = document.getElementById("scoreboard");
 const span = document.getElementsByClassName("close")[0];
