@@ -4,8 +4,8 @@
 
 # How to Play:
 
-Controlls: Use your mouse to click and direct the shrimp towards the bubbles. The shrimp will follow your mouse clicks, moving closer to pop the bubbles and earn points.< br / >
-AVOID!!: Sharks appear from the sides and move towards the shrimp. Avoid contact with these predators at all costs, as hitting a shark will end the game.< br / >
+Controlls: Use your mouse to click and direct the shrimp towards the bubbles. The shrimp will follow your mouse clicks, moving closer to pop the bubbles and earn points.\
+AVOID!!: Sharks appear from the sides and move towards the shrimp. Avoid contact with these predators at all costs, as hitting a shark will end the game.\
 Objective: Bubbles spawn randomly from the bottom of the screen and float upwards. Guide your shrimp to collect these bubbles and boost your score. The goal is to collect as many bubbles as you can without hitting a shark. Compete for the highest score and see if you can top the leaderboard!
 
 # Summary
